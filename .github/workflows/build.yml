@@ -15,7 +15,7 @@ jobs:
         with:
           working_directory: ./src/book/main
           latexmk_use_lualatex: true
-          root_file: scroll.tex
+          root_file: main.tex
           os: debian          # Changes the base image to Debian
           pre_compile: |      # Installs the fonts natively via apt
             apt-get update
@@ -28,4 +28,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: PDF
-          path: ./src/book/main/scroll.pdf
+          path: ./src/book/main/main.pdf
