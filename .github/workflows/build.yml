@@ -19,7 +19,7 @@ jobs:
           os: debian          # Changes the base image to Debian
           pre_compile: |      # Installs the fonts natively via apt
             apt-get update
-            apt-get install -y fonts-cmu fonts-unifont
+            apt-get install -y fonts-cmu fonts-unifont fonts-wqy-zenhei
             luaotfload-tool --update
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode --shell-escape
         env:
