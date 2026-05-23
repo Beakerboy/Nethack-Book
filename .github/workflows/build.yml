@@ -16,6 +16,10 @@ jobs:
           working_directory: ./src/book/main
           latexmk_use_lualatex: true
           root_file: scroll.tex
+          pre_compile: |
+            mkdir -p /etc/fonts/conf.d
+            cp /usr/share/texmf-dist/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf
+            fc-cache -fsv
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode --shell-escape
         env:
           TEXINPUTS: ".:./src/book/main//:"
