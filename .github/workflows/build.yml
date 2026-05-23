@@ -13,8 +13,8 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v4
         with:
-          docker_image: dreadclimber/texlive-inkscape:latest
-          root_file: ./src/book/main/scroll.tex
+          working_directory: ./src/book/main
+          root_file: scroll.tex
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode --shell-escape
         env:
           TEXINPUTS: ".:./src/book/main//:"
