@@ -16,10 +16,10 @@ jobs:
           working_directory: ./src/book/main
           latexmk_use_lualatex: true
           root_file: scroll.tex
-          pre_compile: |
-            mkdir -p /etc/fonts/conf.d
-            cp /usr/local/texlive/2026/texmf-var/fonts/conf/texlive-fontconfig.conf /etc/fonts/conf.d/09-texlive.conf
-            fc-cache -fsv
+          os: debian          # Changes the base image to Debian
+          pre_compile: |      # Installs the fonts natively via apt
+            apt-get update
+            apt-get install -y fonts-cmu
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode --shell-escape
         env:
           TEXINPUTS: ".:./src/book/main//:"
