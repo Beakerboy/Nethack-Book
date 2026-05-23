@@ -17,7 +17,7 @@ jobs:
           root_file: ./src/book/main/scroll.tex
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode --shell-escape
         env:
-          TEXINPUTS: ".:./src/book//:"
+          TEXINPUTS: ".:./src/book/main//:"
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
