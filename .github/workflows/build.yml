@@ -23,7 +23,7 @@ jobs:
             luaotfload-tool --update
           args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode --shell-escape
         env:
-          TEXINPUTS: ".:./src/book/main//:"
+          TEXINPUTS: ".://:"
       - name: Upload PDF file
         uses: actions/upload-artifact@v4
         with:
