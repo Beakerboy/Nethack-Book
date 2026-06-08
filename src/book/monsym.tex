@@ -1,0 +1,54 @@
+% A lookup table of monster letters and colors
+% values from src/monst.c
+% Define base xcolors
+\colorlet{nethack_black}{black}
+\colorlet{nethack_red}{red}
+\colorlet{nethack_green}{green!66!black}
+\colorlet{nethack_brown}{brown}
+\colorlet{nethack_blue}{blue}
+\colorlet{nethack_magenta}{magenta}
+\colorlet{nethack_cyan}{cyan}
+\colorlet{nethack_grey}{grey}
+\colorlet{nethack_none}{black}
+\colorlet{nethack_orange}{orange}
+\colorlet{nethack_brightgreen}{green!66}
+\colorlet{nethack_yellow}{yellow}
+\colorlet{nethack_brightblue}{blue!66}
+\colorlet{nethack_brightmagenta}{magenta!66}
+\colorlet{nethack_brightcyan}{cyan!66}
+\colorlet{nethack_white}{white}
+\colorlet{nethack_max}{white}
+
+% Setup the pgfkeys lookup table structure
+\pgfkeys{
+  /monsym/.is family, /monsym/.unknown/.style={%
+    /monsym/char/.initial=X,
+    /monsym/color/.initial=white,
+  }
+}
+
+% Helper macro to define monster properties (color, character)
+\newcommand{\definemonster}[3]{%
+  \pgfkeys{/monsym/#1/color/.initial=#2}%
+  \pgfkeys{/monsym/#1/char/.initial=#3}%
+}
+
+% Populate the lookup table
+\definemonster{F}{nethack_white}{F}
+\definemonster{lichen}{nethack_brightgreen}{F}
+\definemonster{brown mold}{nethack_brown}{F}
+\definemonster{yellow mold}{nethack_yellow}{F}
+\definemonster{green mold}{nethack_green}{F}
+\definemonster{red mold}{nethack_red}{F}
+\definemonster{shreiker}{nethack_magenta}{F}
+\definemonster{violet fungus}{nethack_magenta}{F}
+\definemonster{grid_bug}{nethack_magenta}{X}
+
+% Define the \monsym command
+\newcommand{\monsym}[1][]{%
+  \colorbox{black}{%
+    \textcolor{\pgfkeysvalueof{/monsym/#1/color}}{%
+      \texttt{\pgfkeysvalueof{/monsym/#1/char}}%
+    }%
+  }%
+}
