@@ -1,6 +1,6 @@
 \usepackage{pgfkeys}
 % A lookup table of monster letters and colors
-% values from src/monst.c
+% values from https://nethackwiki.com/wiki/Source:NetHack_3.6.1/src/monst.c
 % Define base xcolors
 \colorlet{nethack_black}{black}
 \colorlet{nethack_red}{red}
@@ -44,6 +44,10 @@
 \definemonster{red mold}{nethack_red}{F}
 \definemonster{shrieker}{nethack_magenta}{F}
 \definemonster{violet fungus}{nethack_magenta}{F}
+\definemonster{W}{nethack_white}{W}
+\definemonster{barrow wight}{nethack_gray}{W}
+\definemonster{wraith}{nethack_black}{W}
+\definemonster{Nazgul}{nethack_hi_lord}{W}
 \definemonster{grid_bug}{nethack_magenta}{x}
 
 % Define the \monsym command
