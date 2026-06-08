@@ -36,7 +36,13 @@
 }
 
 % Populate the lookup table
-\definemonster{F}{nethack_white}{F}
+\definemonster{giant ant}{nethack_brown}{a}
+\definemonster{killer bee}{nethack_yellow}{a}
+\definemonster{soldier ant}{nethack_blue}{a}
+\definemonster{fire ant}{nethack_red}{a}
+\definemonster{giant beetle}{nethack_black}{a}
+\definemonster{queen bee}{nethack_hi_lord}{a}
+
 \definemonster{lichen}{nethack_brightgreen}{F}
 \definemonster{brown mold}{nethack_brown}{F}
 \definemonster{yellow mold}{nethack_yellow}{F}
@@ -44,7 +50,7 @@
 \definemonster{red mold}{nethack_red}{F}
 \definemonster{shrieker}{nethack_magenta}{F}
 \definemonster{violet fungus}{nethack_magenta}{F}
-\definemonster{W}{nethack_white}{W}
+
 \definemonster{barrow wight}{nethack_gray}{W}
 \definemonster{wraith}{nethack_black}{W}
 \definemonster{Nazgul}{nethack_hi_lord}{W}
@@ -55,6 +61,14 @@
   \colorbox{black}{%
     \textcolor{\pgfkeysvalueof{/monsym/#1/color}}{%
       \texttt{\pgfkeysvalueof{/monsym/#1/char}}%
+    }%
+  }%
+}
+
+\newcommand{\whitesym}[1][]{%
+  \colorbox{black}{%
+    \textcolor{white}{%
+      \texttt{#1}%
     }%
   }%
 }
