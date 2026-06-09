@@ -1,4 +1,12 @@
 \section{Mines' End}
+\newcommand{\whitetext}{\color{white}}
+\newenvironment{mapbox}%
+  {\begin{center}% Centers the box on the page
+   \colorbox{black}{\bgroup}% Starts the black background
+   \begin{BVerbatim}[formatcom=\whitetext]}% Forces white text
+  {\end{BVerbatim}%
+   \egroup}% Closes the black background
+   \end{center}}
 \textbf{Mines\textquotesingle{} End} lies at the bottom of the Gnomish Mines. It will be either the 8th or 9th level of that branch and will therefore occur somewhere between Dlvl10 and Dlvl13. There are three versions of Mines\textquotesingle{} End; each of which is guaranteed to contain a luckstone.
 
 Mines\textquotesingle{} End, being the lowest level of the Gnomish Mines, has an undiggable floor. Therefore, zapping a wand of digging downwards will produce a pit instead of a hole.
@@ -30,10 +38,7 @@ In addition, there are two random tools, seven random gems, three other random o
 
 All walls are undiggable.
 
-\newsavebox{\myverbatimbox}
-\begin{lrbox}{\myverbatimbox}
-\textcolor{white}{
-\begin{BVerbatim}
+\begin{mapbox}
                          ---------     -------------       -------
                          |.......|     |.......|...|       |.....|*
      ---------        ----.......-------...........|       |--...-S-
@@ -52,10 +57,7 @@ All walls are undiggable.
 ---.--.--        ----.................---     ------..------...--    
   |....S*.          |...............|..|         .*S...........|     
   ------            --------------------           -------------  
-\end{BVerbatim}
-}
-\end{lrbox}
-\colorbox{black}{\textcolor{white}{\usebox{\myverbatimbox}}}
+\end{mapbox}
 
 \subsection{The Gnome King\textquotesingle{}s Wine Cellar}
 
@@ -78,9 +80,7 @@ Scattered throughout the level, there are two random tools, seven random gems, t
 As of commit c4c31ae6\footnotemark[73]\myhref{73}{https://github.com/NetHack/NetHack/commit/c4c31ae6a8cdab60b319cc8b355445968e8ec286}, it is no longer possible to arrive on the level in the gem cache area.  Previously, it was possible for an unfortunate character to get stuck in the treasure chamber by falling or levelporting there without a way to escape.
 Tiles with a H might be walls or floor. The square marked D will contain a locked secret door in case the entrance at the lower right is walled off.
 Some of these walls are mutually exclusive so that there will always be a way to reach every part of the level without digging. For details check Source:NetHack 3.6.0/dat/mines.des\#line983.
-\newsavebox{\winecellarbox}
-\begin{lrbox}{\winecellarbox}
-\begin{BVerbatim}
+\begin{mapbox}
 -----------------------------------------------------                        
 |.................H...H.............................|                        
 |.----------S--.---...---------------------------|..|                        
@@ -99,9 +99,8 @@ Some of these walls are mutually exclusive so that there will always be a way to
 |.---------------.|---------------------.|...................H.....          
 |.................|                    |.....................|........       
 -------------------                    --------------------------------      
-\end{BVerbatim}
-\end{lrbox}
-\colorbox{black}{\textcolor{white}{\usebox{\winecellarbox}}}
+\end{mapbox}
+
 \subsubsection{History}
 Nethack 3.4.3 and earlier versions had a fixed layout for the level.
 
