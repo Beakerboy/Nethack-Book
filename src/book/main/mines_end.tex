@@ -72,7 +72,27 @@ Scattered throughout the level, there are two random tools, seven random gems, t
 As of commit c4c31ae6\footnotemark[73]\myhref{73}{https://github.com/NetHack/NetHack/commit/c4c31ae6a8cdab60b319cc8b355445968e8ec286}, it is no longer possible to arrive on the level in the gem cache area.  Previously, it was possible for an unfortunate character to get stuck in the treasure chamber by falling or levelporting there without a way to escape.
 Tiles with a H might be walls or floor. The square marked D will contain a locked secret door in case the entrance at the lower right is walled off.
 Some of these walls are mutually exclusive so that there will always be a way to reach every part of the level without digging. For details check Source:NetHack 3.6.0/dat/mines.des\#line983.
-
+\begin{SaveVerbatim}{MyMapTwo}
+-----------------------------------------------------                        
+|.................H...H.............................|                        
+|.----------S--.---...---------------------------|..|                        
+|.||----   |.|--- |...|..........................|..|                        
+|.||...| ---.-.|---...|.............<............H..|                **      
+|.||...--|.....|....-H-..........................|..D.               **      
+|.||.....|-S-..|....|............................|..|..                      
+|.|----..|!.|..---..|----------------------------|HH|-.                      
+|.|   |..|!.|....|..................................|...                     
+|.|   |..|!.|-----..------------------------------..|....                    
+|.-----..---|.......|-----------------------     |..|.....                   
+|...........|----.--|......................|     |..|.......                 
+-------HH---|...|.| --------------------.|.-------..|.....|..                
+-------HH----.{.|.|---------------------.|..........|.....|....              
+|...............|.S......................|-------------HH-----...            
+|.---------------.|---------------------.|...................H.....          
+|.................|                    |.....................|........       
+-------------------                    --------------------------------    
+\end{SaveVerbatim}
+\renderblackmap{MyMapTwo}
 \subsubsection{History}
 Nethack 3.4.3 and earlier versions had a fixed layout for the level.
 
