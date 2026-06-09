@@ -77,11 +77,8 @@
   \monsym[#1]\mbox{$~$}\texttt{#1}%
   }
 
-\newcommand{\whitetext}{\color{white}}
-\newenvironment{mapbox}%
-  {\begin{center}% Centers the box on the page
-   \colorbox{black}{\bgroup}% Starts the black background
-   \begin{BVerbatim}[formatcom=\whitetext]}% Forces white text
-  {\end{BVerbatim}%
-   \egroup}% Closes the black background
-   \end{center}}
+\newcommand{\renderblackmap}[1]{%
+  \begin{center}%
+    \colorbox{black}{\color{white}\BUseVerbatim{#1}}%
+  \end{center}%
+}
